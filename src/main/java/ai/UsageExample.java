@@ -1,5 +1,6 @@
 package ai;
 
+import ai.probability.ProbabilityMSAgent;
 import api.MSAgent;
 import api.MSField;
 
@@ -24,8 +25,8 @@ public class UsageExample {
 	public static void main(String[] args) {
 
 		/** solve and print */
-		MSField field = new MSField("fields/" + fields[1]);
-		MSAgent agent = new RandomMSAgent(field);
+		MSField field = new MSField("fields/" + fields[3]);
+		MSAgent agent = new ProbabilityMSAgent(field);
 		agent.activateDisplay();
 		agent.solve();
 
@@ -39,8 +40,8 @@ public class UsageExample {
 		for (int i = 0; i < iterations; i++) {
 			// Very important: It is crucial to re-initialize the field and the agent before
 			// solving the same field again!
-			field = new MSField("fields/" + fields[1]);
-			agent = new RandomMSAgent(field);
+			field = new MSField("fields/" + fields[3]);
+			agent = new ProbabilityMSAgent(field);
 
 			boolean solved = agent.solve();
 			if (solved) {

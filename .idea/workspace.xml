@@ -2,41 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/anfaenger1-9x9-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/anfaenger2-9x9-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/anfaenger3-9x9-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/anfaenger4-9x9-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/anfaenger5-9x9-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby1-3x3-0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby2-3x3-1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby3-5x5-1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby4-5x5-3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby5-5x5-5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby6-7x7-1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby7-7x7-3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby8-7x7-5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/baby9-7x7-10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/fortgeschrittene1-16x16-40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/fortgeschrittene2-16x16-40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/fortgeschrittene3-16x16-40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/fortgeschrittene4-16x16-40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/fortgeschrittene5-16x16-40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/profi1-30x16-99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/profi2-30x16-99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/profi3-30x16-99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/profi4-30x16-99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fields/profi5-30x16-99.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/RandomMSAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/MSAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/MSField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/probability/Influence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityFieldCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityMSAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/FieldCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/FieldCellFactoryFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/StatefulMSAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +38,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -73,6 +55,7 @@
   <component name="ProjectId" id="1THjcm4nssYOlarsMZX0flZUXdE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -114,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573123996264</updated>
-      <workItem from="1573123999409" duration="1408000" />
+      <workItem from="1573123999409" duration="11883000" />
     </task>
     <servers />
   </component>

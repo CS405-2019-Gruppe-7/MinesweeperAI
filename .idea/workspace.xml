@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

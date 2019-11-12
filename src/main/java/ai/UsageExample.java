@@ -26,7 +26,7 @@ public class UsageExample {
 	public static void main(String[] args) {
 
 		/** solve and print */
-		MSField field = new MSField("fields/" + fields[7]);
+		MSField field = new MSField("fields/" + fields[5]);
 		MSAgent agent = new LogicMSAgent(field);
 		agent.activateDisplay();
 		agent.solve();
@@ -35,22 +35,22 @@ public class UsageExample {
 		agent.deactivateDisplay();
 
 		// use smaller numbers for larger fields
-		int iterations = 1000;
-
-		int success = 0;
-		for (int i = 0; i < iterations; i++) {
-			// Very important: It is crucial to re-initialize the field and the agent before
-			// solving the same field again!
-			field = new MSField("fields/" + fields[7]);
-			agent = new ProbabilityMSAgent(field);
-
-			boolean solved = agent.solve();
-			if (solved) {
-				success++;
-			}
-		}
-		double rate = (double) success / (double) iterations;
-		System.out.println("Erfolgsquote: " + rate);
+//		int iterations = 1000;
+//
+//		int success = 0;
+//		for (int i = 0; i < iterations; i++) {
+//			// Very important: It is crucial to re-initialize the field and the agent before
+//			// solving the same field again!
+//			field = new MSField("fields/" + fields[7]);
+//			agent = new ProbabilityMSAgent(field);
+//
+//			boolean solved = agent.solve();
+//			if (solved) {
+//				success++;
+//			}
+//		}
+//		double rate = (double) success / (double) iterations;
+//		System.out.println("Erfolgsquote: " + rate);
 
 	}
 

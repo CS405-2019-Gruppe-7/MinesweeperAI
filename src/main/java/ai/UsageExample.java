@@ -25,7 +25,7 @@ public class UsageExample {
 	public static void main(String[] args) {
 
 		/** solve and print */
-		MSField field = new MSField("fields/" + fields[3]);
+		MSField field = new MSField("fields/" + fields[7]);
 		MSAgent agent = new ProbabilityMSAgent(field);
 		agent.activateDisplay();
 		agent.solve();
@@ -40,7 +40,7 @@ public class UsageExample {
 		for (int i = 0; i < iterations; i++) {
 			// Very important: It is crucial to re-initialize the field and the agent before
 			// solving the same field again!
-			field = new MSField("fields/" + fields[3]);
+			field = new MSField("fields/" + fields[7]);
 			agent = new ProbabilityMSAgent(field);
 
 			boolean solved = agent.solve();

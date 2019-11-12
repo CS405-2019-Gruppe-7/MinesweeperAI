@@ -5,9 +5,11 @@ import ai.utility.StatefulMSAgent;
 import api.MSAgent;
 import api.MSField;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -42,6 +44,9 @@ public class ProbabilityMSAgent extends StatefulMSAgent<ProbabilityFieldCell> {
             }
             // the game logic:
             ProbabilityFieldCell cell = uncover(bestMove.x, bestMove.y);
+            for(int i = 0; i < 10; i ++){
+                updateProbabilityField();
+            }
 
             if(cell.bomb){
                 if(display){
@@ -75,18 +80,55 @@ public class ProbabilityMSAgent extends StatefulMSAgent<ProbabilityFieldCell> {
     @Override
     public ProbabilityFieldCell uncover(int x, int y){
         ProbabilityFieldCell cell = super.uncover(x, y);
-        if(!cell.bomb){
-            int bombsMarked = (int)getNeighbours(x,y).filter(it -> it.bombFlag).count();
-            int neighbourCount = (int)getNeighbours(x,y).filter(it -> !it.notABomb).count();
-            getNeighbours(x, y).forEach(c -> {
-                if(cell.bombsAround == 0){
-                    c.zeroProbability();
-                }else{
-                    c.setInfluence(x, y, (double)(cell.bombsAround - bombsMarked)/(double)neighbourCount);
-                }
-            });
-        }
+//        if(!cell.bomb){
+//            int bombsMarked = (int)getNeighbours(x,y).filter(it -> it.bombFlag).count();
+//            int neighbourCount = (int)getNeighbours(x,y).filter(it -> !it.notABomb).count();
+//            getNeighbours(x, y).forEach(c -> {
+//                if(cell.bombsAround == 0){
+//                    c.zeroProbability();
+//                }else{
+//                    c.setInfluence(x, y, (double)(cell.bombsAround - bombsMarked)/(double)neighbourCount);
+//                }
+//            });
+//        }
         return cell;
+    }
+
+    public void updateProbabilityField(){
+        getAllCells().forEach(ProbabilityFieldCell::clearInfluences);
+        boolean done = false;
+
+        getAllCells().filter(it->!it.covered).forEach(it->{
+            String field = this.field.toString();
+            List<ProbabilityFieldCell> neighbours = getNeighbours(it.x, it.y).filter(n ->
+                    n.covered).collect(toList());
+            int foundBombsAround = (int)neighbours.stream().filter(c -> c.bombFlag).count();
+            int clearFieldsAround = (int)neighbours.stream().filter(c-> !c.covered && c.notABomb).count();
+            int possibleBombFieldsAround = neighbours.size() - clearFieldsAround;
+            int notFoundBombsRemaining = it.bombsAround - foundBombsAround;
+            double neigbhourBombProbabilityInfluence;
+
+            if(it.bombsAround == 0){
+                getNeighbours(it.x, it.y).forEach(n -> n.notABomb = true);
+                return;
+            }
+            if(it.bombsAround == possibleBombFieldsAround){
+//            if(((it.x == 3 && it.y == 4) || (it.x == 4 && it.y == 3))){
+//                System.out.println();
+//            }
+                getNeighbours(it.x, it.y).forEach(n -> n.bombFlag = true);
+                return;
+            }
+
+            if(possibleBombFieldsAround != 0){
+                neigbhourBombProbabilityInfluence = (double)notFoundBombsRemaining / (double) possibleBombFieldsAround;
+            }else{
+                neigbhourBombProbabilityInfluence = 0;
+            }
+            neighbours.forEach(n -> n.setInfluence(it.x, it.y,
+                        neigbhourBombProbabilityInfluence
+                    ));
+        });
     }
 
     public void printProbabilityField(){

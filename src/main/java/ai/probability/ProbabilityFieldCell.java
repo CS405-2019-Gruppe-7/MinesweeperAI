@@ -12,6 +12,9 @@ public class ProbabilityFieldCell extends FieldCell {
         if(notABomb){
             return 0;
         }
+        if(bombFlag){
+            return 9;
+        }
         if(influences.size() == 0){
             return 0.5d;
         }
@@ -31,7 +34,7 @@ public class ProbabilityFieldCell extends FieldCell {
         inf.setProbability(probability);
     }
 
-    public void zeroProbability(){
-        notABomb = true;
+    public void clearInfluences(){
+        this.influences.clear();
     }
 }

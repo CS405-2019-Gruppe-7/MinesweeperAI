@@ -1,5 +1,6 @@
 package ai;
 
+import ai.logic.LogicMSAgent;
 import ai.probability.ProbabilityMSAgent;
 import api.MSAgent;
 import api.MSField;
@@ -26,7 +27,7 @@ public class UsageExample {
 
 		/** solve and print */
 		MSField field = new MSField("fields/" + fields[7]);
-		MSAgent agent = new ProbabilityMSAgent(field);
+		MSAgent agent = new LogicMSAgent(field);
 		agent.activateDisplay();
 		agent.solve();
 

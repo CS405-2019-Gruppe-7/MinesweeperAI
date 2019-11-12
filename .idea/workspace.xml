@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicFieldCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityFieldCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityFieldCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityMSAgent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

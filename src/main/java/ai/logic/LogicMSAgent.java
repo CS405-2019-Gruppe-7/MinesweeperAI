@@ -15,6 +15,19 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
 
     @Override
     public boolean solve() {
+        firstMove();
         return false;
+    }
+
+    private void firstMove(){
+        if(display){
+            System.out.println("Initial field:");
+            System.out.println(field);
+        }
+        uncover(0,0);
+        if(display){
+            System.out.println("After initial move (0;0):");
+            System.out.println(field);
+        }
     }
 }

@@ -16,6 +16,7 @@ import static java.util.stream.Collectors.toList;
 public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
 
     private ISolver solver;
+    private Random rng = new Random();
 
     public LogicMSAgent(MSField field) {
         super(field, LogicFieldCell::new);
@@ -38,7 +39,7 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
         clause.clear();
         firstMove();
 
-        while(!field.solved()){
+        while(!gameOver()){
             println("Solving iteration");
             println("Field:");
             println(field);
@@ -85,9 +86,9 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
         }
         boolean bombUncovered = getAllCells().anyMatch(it -> it.bomb && !it.covered);
         if(bombUncovered){
-            println("Bomb uncovered!");
+            println("Game over - a bomb was uncovered!");
         }else{
-            println("Field solved");
+            println("Game over - the field was solved");
         }
         println(field);
         return !bombUncovered;
@@ -102,7 +103,12 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
                 pushClause(-coordinatesToNumber(notBomb));
                 }catch (RuntimeException e){
                     println("Error occurred while adding clauses for cell with 0 bombs around");
-                    println(String.format("The analyzed cell was: (%d;%d) = %d", cell.x, cell.y, cell.bombsAround));
+                    println(String.format("The analyzed cell was: (%d;%d) = %d %s",
+                            cell.x,
+                            cell.y,
+                            cell.bombsAround,
+                            cell.bomb? "BOMB" : ""
+                    ));
                     throw e;
                 }
             });
@@ -143,11 +149,18 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
     }
 
     private void uncoverRandomCell(){
-        Optional<LogicFieldCell> cellOpt = getAllCells().filter(it -> it.covered).findAny();
-        if(cellOpt.isPresent()){
-            LogicFieldCell cell = cellOpt.get();
-            this.uncover(cell.x, cell.y);
+        List<LogicFieldCell> allCells = getAllCells().filter(it -> it.covered).collect(toList());
+        LogicFieldCell cell = allCells.get(rng.nextInt(allCells.size()));
+        cell = this.uncover(cell.x, cell.y);
+        if(cell.bomb){
+            println("BOOM!");
+            println(String.format("Random click uncovered a bomb at (%d;%d)", cell.x, cell.y));
         }
+    }
+
+    private boolean gameOver(){
+        boolean bombUncovered = getAllCells().anyMatch(it -> it.bomb);
+        return field.solved() || bombUncovered;
     }
 
     private boolean bombFilter(LogicFieldCell it){

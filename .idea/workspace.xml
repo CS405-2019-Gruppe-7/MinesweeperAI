@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/Utility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DisjunctionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -217,7 +213,7 @@
       <updated>1573123996264</updated>
       <workItem from="1573123999409" duration="11883000" />
       <workItem from="1573653690363" duration="56000" />
-      <workItem from="1573653952779" duration="4784000" />
+      <workItem from="1573653952779" duration="5358000" />
     </task>
     <servers />
   </component>

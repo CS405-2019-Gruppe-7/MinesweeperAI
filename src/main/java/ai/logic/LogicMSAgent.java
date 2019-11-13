@@ -5,11 +5,11 @@ import ai.utility.StatefulMSAgent;
 import api.MSField;
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
-import org.sat4j.specs.ContradictionException;
-import org.sat4j.specs.ISolver;
-import org.sat4j.specs.IVecInt;
-import org.sat4j.specs.TimeoutException;
+import org.sat4j.specs.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -44,17 +44,42 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
                     .filter(it -> {
                     int number = coordinatesToNumber(it);
                     clause.clear();
-                    clause.push(number);
+                    clause.push(-number);
                     try {
-                        return !solver.isSatisfiable(clause);
+                        return solver.isSatisfiable(clause);
                     } catch (TimeoutException e) {
                         e.printStackTrace();
                     }
                     return false;
-            })
-            .distinct()
-            .collect(toList());
+                })
+                .distinct()
+                .collect(toList());
+
+            List<LogicFieldCell> bombs = getAllCells()
+                    .filter(it -> !it.covered)
+                    .flatMap(it -> getNeighbours(it.x, it.y))
+                    .filter(it -> it.covered)
+                    .filter(it -> {
+                        int number = coordinatesToNumber(it);
+                        clause.clear();
+                        clause.push(-number);
+                        try {
+                            return !solver.isSatisfiable(clause);
+                        } catch (TimeoutException e) {
+                            e.printStackTrace();
+                        }
+                        return false;
+                    })
+                    .distinct()
+                    .collect(toList());
+
             System.out.println("Found notBombs:" + notBombs.size());
+            System.out.println("Found bombs:" + bombs.size());
+            System.out.println("Bombs at:");
+            bombs.forEach(it -> {
+                System.out.println("" + it.x + ";" + it.y);
+                pushClause(coordinatesToNumber(it));
+            });
             notBombs.forEach(it -> {
                 System.out.println(String.format("Uncovering: (%d;%d)", it.x, it.y));
                 LogicFieldCell uncovered = uncover(it.x, it.y);
@@ -78,49 +103,63 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
         IVecInt clause = new VecInt();
         if(cell.bombsAround == 0){
             getNeighbours(cell.x, cell.y).forEach(notBomb -> {
-                clause.clear();
-                clause.push(-coordinatesToNumber(notBomb));
-                System.out.println(clause);
-                try {
-                    solver.addClause(clause);
-                } catch (ContradictionException e) {
-
-                    e.printStackTrace();
-                }
+                pushClause(-coordinatesToNumber(notBomb));
             });
-        }else {
+        }else if (cell.bombsAround==1) {
+            bomb1(getNeighbours(cell.x, cell.y).collect(toList()));
             // for 1 bomb (¬A ∨ ¬B) ∧ (¬A ∨ ¬C) ∧ (A ∨ B ∨ C) ∧ (¬B ∨ ¬C)
-            getNeighbours(cell.x, cell.y).forEach(i -> {
-                Stream<LogicFieldCell> notBombs = getNeighbours(cell.x, cell.y).filter(it -> it.x != i.x && it.y != i.y);
-
-                notBombs.forEach(notBomb -> {
-                    clause.clear();
-                    clause.push(-coordinatesToNumber(i));
-                    clause.push(-coordinatesToNumber(notBomb));
-                    try {
-                        solver.addClause(clause);
-                    } catch (ContradictionException e) {
-                        e.printStackTrace();
-                    }
-                });
-                clause.clear();
-                clause.push(coordinatesToNumber(i));
-            });
-            try {
-                if (!clause.isEmpty())
-                    solver.addClause(clause);
-            } catch (ContradictionException e) {
-                e.printStackTrace();
-            }
+        } else if (cell.bombsAround==2) {
+            bomb2(getNeighbours(cell.x, cell.y).collect(toList()));
         }
-//        try {
-////            System.out.println(clause);
-//            solver.addClause(clause);
-////            System.out.println("Added clauses!");
-//        } catch (ContradictionException e) {
-//            e.printStackTrace();
-//        }
     }
+
+    public void bomb1(List<LogicFieldCell> cells) {
+            Stream<LogicFieldCell> notBombs = cells.stream().filter(it -> it.x != i.x && it.y != i.y);
+            cells.forEach(i -> {
+
+            notBombs.forEach(notBomb -> {
+                pushClause(-coordinatesToNumber(i), -coordinatesToNumber(notBomb));
+            });
+        });
+        pushClause(cells.stream().mapToInt(this::coordinatesToNumber).toArray());
+    }
+
+//    public List<IVecInt> getAllDisjunctions(ArrayList<Integer> literals, int len){
+//        ArrayList<IVecInt> result  = new ArrayList<>();
+//        for(int i = 0; i < len; i++){
+//            IVecInt clause = new VecInt();
+//            clause.push()
+//        }
+//    }
+
+    public void bomb2(List<LogicFieldCell> cells) {
+        Iterator<LogicFieldCell> it = cells.iterator();
+        while (it.hasNext()) {
+            pushClause(coordinatesToNumber(it.next()));
+            it.remove();
+            bomb1(cells);
+        }
+    }
+
+    private void pushClause(int ... literals){
+        IVecInt clause = new VecInt();
+        for(int l: literals){
+            clause.push(l);
+        }
+        if(!clause.isEmpty()) {
+            System.out.println(clause);
+            try {
+                solver.addClause(clause);
+            } catch (ContradictionException e) {
+                System.out.println("Contradiction: " + clause);
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }else{
+            System.out.println("Can't add an empty clause");
+        }
+    }
+
 
     private int coordinatesToNumber(LogicFieldCell cell){
         return cell.y * nRows + cell.x + 1;

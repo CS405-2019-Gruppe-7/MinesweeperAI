@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fields/baby10-3x3-2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SatTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/Utility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DisjunctionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
@@ -25,9 +26,17 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="minesweeperai" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -86,6 +95,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DisjunctionTests.testBitsSet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DisjunctionTests.testBitsSet&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DisjunctionTests.testDisjunctionGeneration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DisjunctionTests.testDisjunctionGeneration&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DisjunctionTests.testDisjunctionGeneration2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;DisjunctionTests.testDisjunctionGeneration2&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="SatTests.testSat" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -128,6 +197,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DisjunctionTests.testDisjunctionGeneration2" />
+        <item itemvalue="Gradle.DisjunctionTests.testDisjunctionGeneration" />
+        <item itemvalue="Gradle.DisjunctionTests.testBitsSet" />
         <item itemvalue="Gradle.SatTests.testSatContradiction" />
         <item itemvalue="Gradle.SatTests.testSat" />
       </list>
@@ -144,6 +216,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573123996264</updated>
       <workItem from="1573123999409" duration="11883000" />
+      <workItem from="1573653690363" duration="56000" />
+      <workItem from="1573653952779" duration="4784000" />
     </task>
     <servers />
   </component>
@@ -162,16 +236,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

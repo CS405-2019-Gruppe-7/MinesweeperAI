@@ -26,7 +26,7 @@ public class UsageExample {
 	public static void main(String[] args) {
 
 		/** solve and print */
-		MSField field = new MSField("fields/" + fields[0]);
+		MSField field = new MSField("fields/" + fields[9]);
 		MSAgent agent = new LogicMSAgent(field);
 		agent.activateDisplay();
 		agent.solve();

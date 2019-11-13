@@ -4,6 +4,7 @@
     <list default="true" id="eb21f519-584e-42cb-afaa-1af02dd8745a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/utility/StatefulMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/utility/StatefulMSAgent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +214,7 @@
       <updated>1573123996264</updated>
       <workItem from="1573123999409" duration="11883000" />
       <workItem from="1573653690363" duration="56000" />
-      <workItem from="1573653952779" duration="5358000" />
+      <workItem from="1573653952779" duration="6058000" />
     </task>
     <servers />
   </component>

@@ -122,4 +122,24 @@ public abstract class StatefulMSAgent<CellT extends FieldCell> extends MSAgent {
     public void deactivateDisplay() {
         display = false;
     }
+
+    public void printInternalField(){
+        if(display){
+            for(int y = 0; y < nRows; y++){
+                for(int x = 0; x < nColumns; x++){
+                    String c;
+                    if(this.get(x, y).bomb)
+                        c = "X";
+                    else if(this.get(x, y).bombFlag)
+                        c = "F";
+                    else if(this.get(x, y).covered)
+                        c = "-";
+                    else
+                        c = String.valueOf(this.get(x,y).bombsAround);
+                    System.out.print(c + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
 }

@@ -44,6 +44,7 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
             println("Field:");
             println(field);
             solver.clearLearntClauses();
+            getAllCells().forEach(it -> it.bombFlag = false);
             getAllCells().filter(it -> !it.covered).forEach(this::analyzeCell);
             List<LogicFieldCell> notBombs = getAllCells()
                     .filter(it -> !it.covered)
@@ -60,6 +61,7 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
                     .filter(this::bombFilter)
                     .distinct()
                     .collect(toList());
+            bombs.forEach(it->it.bombFlag = true);
 
             println("Found notBombs:" + notBombs.size());
             println("Found bombs:" + bombs.size());
@@ -69,6 +71,8 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
                     println("" + it.x + ";" + it.y);
 //                    pushClause(coordinatesToNumber(it));
                 });
+                println("Bomb flags:");
+                this.printInternalField();
             }
             notBombs.forEach(it -> {
                 println(String.format("Uncovering: (%d;%d)", it.x, it.y));
@@ -149,7 +153,7 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
     }
 
     private void uncoverRandomCell(){
-        List<LogicFieldCell> allCells = getAllCells().filter(it -> it.covered).collect(toList());
+        List<LogicFieldCell> allCells = getAllCells().filter(it -> it.covered && !it.bombFlag).collect(toList());
         LogicFieldCell cell = allCells.get(rng.nextInt(allCells.size()));
         cell = this.uncover(cell.x, cell.y);
         if(cell.bomb){

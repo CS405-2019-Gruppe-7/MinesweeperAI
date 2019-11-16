@@ -1,15 +1,17 @@
 package ai.logic;
 
-import ai.utility.FieldCellFactoryFunction;
 import ai.utility.StatefulMSAgent;
 import ai.utility.Utility;
 import api.MSField;
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
-import org.sat4j.specs.*;
+import org.sat4j.specs.ContradictionException;
+import org.sat4j.specs.ISolver;
+import org.sat4j.specs.IVecInt;
+import org.sat4j.specs.TimeoutException;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.List;
+import java.util.Random;
 
 import static java.util.stream.Collectors.toList;
 

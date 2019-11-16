@@ -20,9 +20,10 @@ public class SolveSingleField {
 
     public static void main(String[] args){
         //		 solve and print
-		MSField field = new MSField("fields/" + fields[18]);
+		MSField field = new MSField("fields/" + fields[10]);
 		MSAgent agent = new LogicMSAgent(field);
-		agent.activateDisplay();
-		agent.solve();
+//		agent.activateDisplay();
+		boolean solved = agent.solve();
+		System.out.println("The field was solved:" + solved);
     }
 }

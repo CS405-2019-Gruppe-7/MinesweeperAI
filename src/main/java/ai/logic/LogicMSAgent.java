@@ -49,10 +49,14 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
             println("Fields to uncover queue:");
 
             if(fieldsToUncover.size() == 0){
-                solver.clearLearntClauses();
 
-                getAllCells().filter(it -> !it.covered)
-                        .forEach(this::analyzeCell);
+                getAllCells()
+                    .filter(it -> !it.covered)
+                    .flatMap(it -> getNeighbours(it.x, it.y))
+                    .filter(it -> it.covered)
+                    .filter(this::bombFilter)
+                    .distinct()
+                    .forEach(it -> it.bombFlag = true);
 
                 List<LogicFieldCell> notBombs = getAllCells()
                         .filter(it -> !it.covered)
@@ -181,9 +185,10 @@ public class LogicMSAgent extends StatefulMSAgent<LogicFieldCell> {
         }else if(cell.bombsAround == neighbours.size()){
             // all the neighbouring cells are bombs
             try {
-                neighbours.forEach(it -> pushClause(
-                        coordinatesToNumber(cell)
-                ));
+                neighbours.forEach(it -> {
+                    pushClause(coordinatesToNumber(cell));
+                    it.bombFlag = true;
+                });
             }catch (RuntimeException e){
                 System.out.println("Error occurred while adding clauses for cell with only bombs around");
                 System.out.println(String.format("The analyzed cell was: (%d;%d) = %d", cell.x, cell.y, cell.bombsAround));

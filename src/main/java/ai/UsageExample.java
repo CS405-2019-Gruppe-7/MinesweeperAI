@@ -57,7 +57,7 @@ public class UsageExample {
 				average /= solved;
 			}else{
 				// there is no meaningful average here
-				average = 0;
+				average = -1;
 			}
 			String time = String.format("%d,%03d sec",
 					TimeUnit.MILLISECONDS.toSeconds(average),

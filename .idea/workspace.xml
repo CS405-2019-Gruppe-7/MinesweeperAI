@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90033b76-0805-4837-8777-8fe9b772cba1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/Requirements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minesweeperai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/minesweeperai.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
     </list>
@@ -91,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573915147613</updated>
       <workItem from="1573915150441" duration="374000" />
-      <workItem from="1573925747393" duration="5540000" />
+      <workItem from="1573925747393" duration="6310000" />
     </task>
     <servers />
   </component>

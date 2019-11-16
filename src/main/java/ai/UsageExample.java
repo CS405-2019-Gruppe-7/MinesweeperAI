@@ -2,9 +2,11 @@ package ai;
 
 import ai.logic.LogicMSAgent;
 import ai.probability.ProbabilityMSAgent;
+import ai.utility.Requirements;
 import api.MSAgent;
 import api.MSField;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -30,18 +32,12 @@ public class UsageExample {
 
 		MSField field;
 		MSAgent agent;
-		/** solve and print
-		MSField field = new MSField("fields/" + fields[9]);
-		MSAgent agent = new LogicMSAgent(field);
-		agent.activateDisplay();
-		agent.solve();
-
-		/** solve multiple times and count
+		/* solve multiple times and count
 		agent.deactivateDisplay();
 		*/
 
 		int iterations = 100;
-
+		Requirements req = new Requirements();
 		for (int i = 0; i < fields.length; i++) {
 			int solved = 0;
 			long average = 0;
@@ -57,33 +53,23 @@ public class UsageExample {
 				}
 
 			}
-
-			average /= solved;
+			if(solved != 0){
+				average /= solved;
+			}else{
+				// there is no meaningful average here
+				average = 0;
+			}
 			String time = String.format("%d,%03d sec",
 					TimeUnit.MILLISECONDS.toSeconds(average),
 					average - TimeUnit.SECONDS.toMillis(TimeUnit.MILLISECONDS.toSeconds(average)));
 
 			double prob = ((double)solved/iterations)*100;
-			System.out.println(fields[i] + " | " + solved + "/" + iterations + " | Quote: " + prob + "% | " + time);
+			HashMap<String, String> requirements = req.requirements.get(fields[i]);
+			System.out.println(fields[i] +
+					" | " +solved + "/" + iterations +
+					" | Quote: " + prob + "% ("+ requirements.get("probability") +")" +
+					" | " + time + " ("+requirements.get("time")+")");
 		}
-
-		// use smaller numbers for larger fields
-//		int iterations = 1000;
-//
-//		int success = 0;
-//		for (int i = 0; i < iterations; i++) {
-//			// Very important: It is crucial to re-initialize the field and the agent before
-//			// solving the same field again!
-//			field = new MSField("fields/" + fields[7]);
-//			agent = new ProbabilityMSAgent(field);
-//
-//			boolean solved = agent.solve();
-//			if (solved) {
-//				success++;
-//			}
-//		}
-//		double rate = (double) success / (double) iterations;
-//		System.out.println("Erfolgsquote: " + rate);
 
 	}
 

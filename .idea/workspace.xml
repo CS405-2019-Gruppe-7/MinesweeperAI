@@ -2,43 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90033b76-0805-4837-8777-8fe9b772cba1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/utility/Requirements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/anfaenger1-9x9-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/anfaenger2-9x9-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/anfaenger3-9x9-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/anfaenger4-9x9-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/anfaenger5-9x9-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby1-3x3-0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby10-3x3-2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby2-3x3-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby3-5x5-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby4-5x5-3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby5-5x5-5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby6-7x7-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby7-7x7-3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby8-7x7-5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/baby9-7x7-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/fortgeschrittene1-16x16-40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/fortgeschrittene2-16x16-40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/fortgeschrittene3-16x16-40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/fortgeschrittene4-16x16-40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/fortgeschrittene5-16x16-40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/profi1-30x16-99.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/profi2-30x16-99.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/profi3-30x16-99.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/profi4-30x16-99.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fields/profi5-30x16-99.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minesweeperai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/minesweeperai.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,6 +17,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,10 +50,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.UsageExample">
+    <configuration name="SolveSingleField" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ai.SolveSingleField" />
+      <module name="minesweeperai" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UsageExample" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ai.UsageExample" />
       <module name="minesweeperai" />
+      <RunnerSettings RunnerId="Debug with VisualVM">
+        <option name="visualVMId" value="29086533170900" />
+      </RunnerSettings>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -90,6 +75,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.UsageExample" />
+      <item itemvalue="Application.SolveSingleField" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -101,7 +90,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573915147613</updated>
-      <workItem from="1573915150441" duration="189000" />
+      <workItem from="1573915150441" duration="374000" />
+      <workItem from="1573925747393" duration="5540000" />
     </task>
     <servers />
   </component>
@@ -113,7 +103,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

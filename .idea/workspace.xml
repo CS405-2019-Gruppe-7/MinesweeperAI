@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="90033b76-0805-4837-8777-8fe9b772cba1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/SolveSingleField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/UsageExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/logic/LogicMSAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/probability/Influence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityFieldCell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/probability/ProbabilityMSAgent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SatTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SatTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UsageExample">
+  <component name="RunManager" selected="JUnit.All in minesweeperai">
     <configuration name="SolveSingleField" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ai.SolveSingleField" />
       <module name="minesweeperai" />
@@ -73,10 +75,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in minesweeperai" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="minesweeperai" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.UsageExample" />
       <item itemvalue="Application.SolveSingleField" />
+      <item itemvalue="JUnit.All in minesweeperai" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in minesweeperai" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,7 +105,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573915147613</updated>
       <workItem from="1573915150441" duration="374000" />
-      <workItem from="1573925747393" duration="6310000" />
+      <workItem from="1573925747393" duration="7089000" />
+      <workItem from="1574008003618" duration="1431000" />
+      <workItem from="1574026399100" duration="125000" />
     </task>
     <servers />
   </component>

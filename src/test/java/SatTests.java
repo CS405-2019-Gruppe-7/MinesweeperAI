@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
@@ -50,6 +51,7 @@ public class SatTests {
         assertTrue(solver.isSatisfiable(clause));
     }
 
+    @Ignore
     @Test
     public void testSatContradiction() throws ContradictionException, TimeoutException {
         ISolver solver = SolverFactory.newDefault();
